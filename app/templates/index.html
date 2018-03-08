@@ -1,0 +1,85 @@
+<htm1>
+
+    <head>
+        <title>{{ title }}</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Inder" rel="stylesheet">
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/main.css')}}">
+    </head>
+
+    <body>
+        <div id="container">
+            <header id="title">
+                <h1>BingBot GUI</h1>
+            </header>
+            <div id="actionsSec">
+                <div id="actionsHeader">
+                    <h2>Actions</h2>
+                </div>
+                <div id="actions">
+                    <a href="#">
+                        <div id="actionFull" class="action">
+                            <i class="fab fa-microsoft actionIcon"></i>
+                            <h6>(Desktop and Mobile)</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="actionDesktop" class="action">
+                            <i class="fas fa-desktop actionIcon"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="actionMobile" class="action">
+                            <i class="fas fa-mobile-alt actionIcon"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="actionLogin" class="action">
+                            <i class="fas fa-sign-in-alt actionIcon"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="actionSearch" class="action">
+                            <i class="fas fa-search actionIcon"></i>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div id="actionAdd" class="action">
+                            <i class="fas fa-user-plus actionIcon"></i>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <div id="accountsSec">
+                <div id="accountsHeader">
+                    <h2>Accounts</h2>
+                    <h6 class="usageInfo">Click account to edit</h6>
+                </div>
+                <div id="accounts">
+                    {% for account in accounts %}
+                    <a href="#" class="account">
+                        <div id="user{{account.id}}">
+                            <h3>{{account.email}}</h3>
+                            <p>Points: {{account.points}}</p>
+                            <p>Times Redeemed: {{account.timesRedeemed}}</p>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <footer>
+                <div id="copyright">
+                    <a href="#">Copyright <span>METRID Co</span> {{year}}</a>
+                </div>
+                <div id="links">
+                    <a href="https://github.com/bclyde95"><i class="fab fa-github icons"></i></a>
+                    <a href="https://www.facebook.com/MetridDesign/"><i class="fab fa-facebook-f icons"></i></a>
+                    <a href="https://twitter.com/BCMetrid"><i class="fab fa-twitter icons"></i></a>
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</htm1>
